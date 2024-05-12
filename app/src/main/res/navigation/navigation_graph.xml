@@ -9,5 +9,18 @@
         android:id="@+id/pocemonsListFragment"
         android:name="com.example.pocelist.presentation.list.PocemonsListFragment"
         android:label="fragment_pocemons_list"
-        tools:layout="@layout/fragment_pocemons_list" />
+        tools:layout="@layout/fragment_pocemons_list">
+        <action
+            android:id="@+id/action_pocemonsListFragment_to_pocemonDetailsFragment"
+            app:destination="@id/pocemonDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pocemonDetailsFragment"
+        android:name="com.example.pocelist.presentation.details.PocemonDetailsFragment"
+        android:label="fragment_pocemon_details"
+        tools:layout="@layout/fragment_pocemon_details">
+        <argument
+            android:name="pocemonName"
+            app:argType="string" />
+    </fragment>
 </navigation>

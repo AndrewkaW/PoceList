@@ -7,4 +7,6 @@
     <string name="types_title">Типы:</string>
     <string name="abilities_title">Способности:</string>
     <string name="art_work_pocemon">Ресунок покемона</string>
+    <string name="not_found">Ничего не найдено.</string>
+    <string name="connecion_error">Ошибка соединения.</string>
 </resources>
