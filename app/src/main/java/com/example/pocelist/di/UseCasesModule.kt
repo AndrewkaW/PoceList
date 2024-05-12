@@ -5,7 +5,7 @@ import com.example.pocelist.domain.impl.PocemonsListUseCaseImpl
 import org.koin.dsl.module
 
 val useCasesModule = module {
-    single <PocemonsListUseCase>{
+    factory <PocemonsListUseCase>{
         PocemonsListUseCaseImpl(get())
     }
 }

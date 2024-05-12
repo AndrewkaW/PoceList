@@ -15,8 +15,7 @@ class AdapterPocemon {
 
     private fun extractIconUrl(url: String): String {
         val parts = url.split("/")
-        val number = parts.last()
+        val number = parts[parts.size - 2]
         return IMAGE_URL + number + FORMAT_IMAGE
-        // return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${number}.png"
     }
 }

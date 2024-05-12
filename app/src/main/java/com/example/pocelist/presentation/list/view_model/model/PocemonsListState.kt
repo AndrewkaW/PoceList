@@ -11,5 +11,5 @@ sealed interface PocemonsListState {
 
     data class Error(
         val massage: String
-    )
+    ) : PocemonsListState
 }
