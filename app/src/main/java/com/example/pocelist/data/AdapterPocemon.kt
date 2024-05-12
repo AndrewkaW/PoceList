@@ -1,8 +1,8 @@
 package com.example.pocelist.data
 
 import com.example.pocelist.data.network.model.PocemonDto
-import com.example.pocelist.domain.FORMAT_IMAGE
-import com.example.pocelist.domain.IMAGE_URL
+import com.example.pocelist.util.FORMAT_IMAGE
+import com.example.pocelist.util.IMAGE_URL
 import com.example.pocelist.domain.model.Pocemon
 
 class AdapterPocemon {
