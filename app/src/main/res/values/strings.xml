@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Pocelist</string>
+    <string name="pocemon_avatar">аватар покемона</string>
 </resources>

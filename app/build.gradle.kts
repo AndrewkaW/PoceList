@@ -52,12 +52,20 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     //Retrofit & Interceptor
-    implementation("com.squareup.retrofit2:retrofit:2.10.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.10.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.7.2")
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
 
     //Glide
-    implementation("com.github.bumptech.glide:glide:4.16.0")
-    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
-    kapt("com.github.bumptech.glide:compiler:4.16.0")
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+   // kapt(libs.compiler)
+
+    //Koin
+    implementation (libs.koin.android)
+
+    //JetpackNavigation
+    implementation (libs.androidx.navigation.fragment.ktx)
+    implementation (libs.androidx.navigation.ui.ktx)
+    implementation (libs.androidx.fragment.ktx)
 }
