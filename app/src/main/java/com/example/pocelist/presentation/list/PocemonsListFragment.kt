@@ -1,4 +1,4 @@
-package com.example.pocelist
+package com.example.pocelist.presentation.list
 
 import androidx.fragment.app.Fragment
 
