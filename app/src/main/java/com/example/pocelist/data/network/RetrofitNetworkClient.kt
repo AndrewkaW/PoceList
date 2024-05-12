@@ -31,8 +31,19 @@ class RetrofitNetworkClient(
         }
     }
 
-    override suspend fun getPokemonDetails(pokemonName: String): PokemonDetailsDto {
-        TODO("Not yet implemented")
+    override suspend fun getPokemonDetails(pokemonName: String): Response {
+        if (!isConnected()) {
+            return Response().apply { responseCode = ResultCodes.NO_NET_CONNECTION }
+        }
+
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = pokemonApi.getPokemonDetails(pokemonName)
+                response.apply { responseCode = ResultCodes.SUCCESS }
+            } catch (e: Throwable) {
+                Response().apply { responseCode = ResultCodes.ERROR }
+            }
+        }
     }
 
     private fun isConnected(): Boolean {
