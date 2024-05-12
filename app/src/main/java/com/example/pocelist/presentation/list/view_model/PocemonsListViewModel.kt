@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.pocelist.domain.PocemonsListUseCase
+import com.example.pocelist.domain.usecases.PocemonsListUseCase
 import com.example.pocelist.domain.model.Pocemon
 import com.example.pocelist.presentation.list.view_model.model.PocemonsListState
 import com.example.pocelist.util.Resource

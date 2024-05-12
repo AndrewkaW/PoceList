@@ -1,4 +1,4 @@
-package com.example.pocelist.domain
+package com.example.pocelist.domain.usecases
 
 import com.example.pocelist.domain.model.Pocemon
 import com.example.pocelist.util.Resource

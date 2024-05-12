@@ -1,6 +1,5 @@
-package com.example.pocelist.data.list
+package com.example.pocelist.data.impl
 
-import com.example.pocelist.data.AdapterPocemon
 import com.example.pocelist.data.NetworkClient
 import com.example.pocelist.data.network.model.PocemonDetailsResponse
 import com.example.pocelist.data.network.model.PokemonListResponse
@@ -29,7 +28,7 @@ class PocemonsRepositoryImpl(
             ResultCodes.SUCCESS -> {
                 val listResponse = response as PokemonListResponse
                 if (listResponse.results.isEmpty()) {
-                    emit(Resource.Error(Resource.NOT_FOUND))
+                    emit(Resource.Error(NOT_FOUND))
                 } else {
                     val data = listResponse.results.map {
                         adapterPocemon.pocemonDtoToPocemon(it)
@@ -44,19 +43,28 @@ class PocemonsRepositoryImpl(
         }
     }
 
-    override fun getPocemonDetailes(name: String): Flow<Resource<PocemonDetails>> = flow {
+    override fun getPocemonDetails(name: String): Flow<Resource<PocemonDetails>> = flow {
         val response = networkClient.getPokemonDetails(name)
 
         when (response.responseCode) {
-            ResultCodes.ERROR -> emit(Resource.Error(NOT_FOUND))
-            ResultCodes.SUCCESS -> {
-                val response = response as PocemonDetailsResponse
-                val data = adapterPocemon.pocemonDetailsDtoToPocemonDetails(response.result)
-
-                emit(Resource.Success(data))
+            ResultCodes.ERROR -> {
+                emit(Resource.Error(NOT_FOUND))
             }
 
-            ResultCodes.NO_NET_CONNECTION -> emit(Resource.Error(CONNECTION_ERROR))
+            ResultCodes.SUCCESS -> {
+                val data = response as PocemonDetailsResponse
+                emit(
+                    Resource.Success(
+                        adapterPocemon.pocemonDetailsDtoToPocemonDetails(
+                            data.result
+                        )
+                    )
+                )
+            }
+
+            ResultCodes.NO_NET_CONNECTION -> {
+                emit(Resource.Error(CONNECTION_ERROR))
+            }
         }
     }
 }

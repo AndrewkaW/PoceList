@@ -1,6 +1,6 @@
 package com.example.pocelist.di
 
-import com.example.pocelist.data.AdapterPocemon
+import com.example.pocelist.data.impl.AdapterPocemon
 import com.example.pocelist.data.NetworkClient
 import com.example.pocelist.data.network.PocemonsApi
 import com.example.pocelist.data.network.RetrofitNetworkClient

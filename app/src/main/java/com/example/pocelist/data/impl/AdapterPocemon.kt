@@ -1,4 +1,4 @@
-package com.example.pocelist.data
+package com.example.pocelist.data.impl
 
 import com.example.pocelist.data.network.model.Ability
 import com.example.pocelist.data.network.model.PocemonDto
