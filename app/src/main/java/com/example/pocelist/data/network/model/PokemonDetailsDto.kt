@@ -8,7 +8,7 @@ data class PokemonDetailsDto(
     val abilities: List<Ability>,
     val baseExperience: Int,
     val sprites: Sprites
-)
+) : Response()
 
 data class Type(
     val type: TypeName

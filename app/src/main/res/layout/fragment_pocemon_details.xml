@@ -32,8 +32,10 @@
 
     <TextView
         android:id="@+id/tv_name"
+        style="@style/TextAppearance.Material3.HeadlineMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_artwork" />
 

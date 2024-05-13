@@ -1,7 +1,7 @@
 package com.example.pocelist.data.impl
 
 import com.example.pocelist.data.NetworkClient
-import com.example.pocelist.data.network.model.PocemonDetailsResponse
+import com.example.pocelist.data.network.model.PokemonDetailsDto
 import com.example.pocelist.data.network.model.PokemonListResponse
 import com.example.pocelist.data.network.model.ResultCodes
 import com.example.pocelist.domain.PocemonsRepository
@@ -52,11 +52,11 @@ class PocemonsRepositoryImpl(
             }
 
             ResultCodes.SUCCESS -> {
-                val data = response as PocemonDetailsResponse
+                val data = response as PokemonDetailsDto
                 emit(
                     Resource.Success(
                         adapterPocemon.pocemonDetailsDtoToPocemonDetails(
-                            data.result
+                            data
                         )
                     )
                 )
